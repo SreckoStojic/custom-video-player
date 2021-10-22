@@ -4,6 +4,7 @@ const timeVideoSlider = document.querySelector('.js-time-video');
 let volumeValue = 1;
 let currentTimeVideo = 0;
 const PERCENTAGE = 100;
+const speed = document.querySelector(".js-speed-video");
 
 document.addEventListener("DOMContentLoaded", function() {
     volumeValue = video.volume;
@@ -51,4 +52,8 @@ function timeChangeVideo() {
 
 function fullScreenVideo() {
     video.requestFullscreen();
+}
+
+function speedChangeVideo() {
+    video.playbackRate = speed.value;
 }

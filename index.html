@@ -9,20 +9,25 @@
 </head>
 <body>
     <main>
-        <select class="js-choose-video" name="speed" onchange="chooseVideo()">
-            <option selected value="./videos/clip1.mp4">Clip 1</option>
-            <option value="./videos/clip2.mp4">Clip 2</option>
-        </select>
+        <div>
+        <label>Choose video:</label>
+            <select class="js-choose-video" name="speed" onchange="chooseVideo()">
+                <option selected value="./videos/clip1.mp4">Clip 1</option>
+                <option value="./videos/clip2.mp4">Clip 2</option>
+            </select>
+        </div>
         <video>
             <source src="./videos/clip1.mp4" type="video/mp4" >
         </video>
         <input class="css-time-video js-time-video" type="range" onchange="timeChangeVideo()"/>
         <div class="css-controls-video">
-            <button class="css-btn js-play-btn" onclick="playVideo()">Play</button>
+            <button class="css-btn css-play-pause-btn js-play-pause-btn" onclick="playPauseVideo()"></button>
+            <!--<button class="css-btn js-play-btn" onclick="playVideo()">Play</button>
             <button class="css-btn js-pause-btn" onclick="pauseVideo()">Pause</button>
-            <button class="css-btn js-mute-btn" onclick="muteVideo()">Mute</button>
-            <input class="js-volume" type="range" min="1" max="100" onchange="volumeChange()"/>
-            <label for="cars">Speed:</label>
+            -->
+            <button class="css-btn css-mute-btn js-mute-btn" onclick="muteVideo()"></button>
+            <input class="js-volume" type="range" min="0" max="100" onchange="volumeChange()"/>
+            <label>Speed:</label>
             <select class="js-speed-video" name="speed" onchange="speedChangeVideo()">
                 <option value="0.5">0.5x</option>
                 <option value="0.75">0.75x</option>
@@ -30,7 +35,7 @@
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
-            <button class="css-btn js-full-screen-btn" onclick="fullScreenVideo()">Full Screen</button>
+            <button class="css-btn css-full-screen-btn js-full-screen-btn" onclick="fullScreenVideo()"></button>
         </div> 
     </main>
     <script src="index.js"></script>

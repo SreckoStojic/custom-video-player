@@ -32,3 +32,22 @@ video {
 .css-time-video {
     width: 700px;
 }
+
+.css-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    cursor: pointer;
+}
+
+.css-mute-btn {
+    background-image: url(images/volume_32x32.png);
+}
+
+.css-play-pause-btn {
+    background-image: url(images/playbtn_32x32.png);
+}
+
+.css-full-screen-btn {
+    background-image: url(images/fullscreen_32x32.png);
+}

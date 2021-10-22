@@ -6,6 +6,9 @@ let currentTimeVideo = 0;
 const PERCENTAGE = 100;
 const speed = document.querySelector(".js-speed-video");
 const choose = document.querySelector(".js-choose-video");
+const playPauseBtn = document.querySelector('.js-play-pause-btn');
+const muteBtn = document.querySelector('.js-mute-btn');
+let play = true;
 
 document.addEventListener("DOMContentLoaded", function() {
     volumeValue = video.volume;
@@ -35,14 +38,21 @@ function muteVideo() {
         video.muted = true;
         currentVolumeValue = volumeInputSlider.value;
         volumeInputSlider.value = 0;
+        muteBtn.style.backgroundImage = "url('images/mutebtn_32x32.png')"
+
     } else {
         video.muted = false;
         volumeInputSlider.value = currentVolumeValue;
-
+        muteBtn.style.backgroundImage = "url('images/volume_32x32.png')"
     }
 }
 
 function volumeChange() {
+    if (volumeInputSlider.value > 0) {
+        muteBtn.style.backgroundImage = "url('images/volume_32x32.png')";
+    } else {
+        muteBtn.style.backgroundImage = "url('images/mutebtn_32x32.png')";
+    }
     video.volume = volumeInputSlider.value / PERCENTAGE;
 }
 
@@ -64,4 +74,16 @@ function chooseVideo() {
     video.pause();
     video.currentTime = 0;
     video.play()
+}
+
+function playPauseVideo() {
+    if (play === true) {
+        playPauseBtn.style.backgroundImage = "url('images/pausebtn_32x32.png')";
+        playVideo();
+        play = false;
+    } else {
+        playPauseBtn.style.backgroundImage = "url('images/playbtn_32x32.png')";
+        pauseVideo();
+        play = true;
+    }
 }

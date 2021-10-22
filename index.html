@@ -9,10 +9,13 @@
 </head>
 <body>
     <main>
+        <select class="js-choose-video" name="speed" onchange="chooseVideo()">
+            <option selected value="./videos/clip1.mp4">Clip 1</option>
+            <option value="./videos/clip2.mp4">Clip 2</option>
+        </select>
         <video>
             <source src="./videos/clip1.mp4" type="video/mp4" >
         </video>
-        
         <input class="css-time-video js-time-video" type="range" onchange="timeChangeVideo()"/>
         <div class="css-controls-video">
             <button class="css-btn js-play-btn" onclick="playVideo()">Play</button>

@@ -5,6 +5,7 @@ let volumeValue = 1;
 let currentTimeVideo = 0;
 const PERCENTAGE = 100;
 const speed = document.querySelector(".js-speed-video");
+const choose = document.querySelector(".js-choose-video");
 
 document.addEventListener("DOMContentLoaded", function() {
     volumeValue = video.volume;
@@ -56,4 +57,11 @@ function fullScreenVideo() {
 
 function speedChangeVideo() {
     video.playbackRate = speed.value;
+}
+
+function chooseVideo() {
+    video.src = choose.value;
+    video.pause();
+    video.currentTime = 0;
+    video.play()
 }

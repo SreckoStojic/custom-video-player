@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main>
+        <video>
+            <source src="./videos/clip1.mp4" type="video/mp4" >
+        </video>
+        
+        <input class="css-time-video js-time-video" type="range" onchange="timeChangeVideo()"/>
+        <div class="css-controls-video">
+            <button class="css-btn js-play-btn" onclick="playVideo()">Play</button>
+            <button class="css-btn js-pause-btn" onclick="pauseVideo()">Pause</button>
+            <button class="css-btn js-mute-btn" onclick="muteVideo()">Mute</button>
+            <input class="js-volume" type="range" min="1" max="100" onchange="volumeChange()"/>
+            <button class="css-btn js-full-screen-btn" onclick="fullScreenVideo()">Full Screen</button>
+        </div> 
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
